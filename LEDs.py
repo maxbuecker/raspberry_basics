@@ -3,8 +3,8 @@
 import RPi.GPIO as GPIO
 import time
 
-green = 18 #Pin Number RPi Board
-red = 20 #Pin Number RPi Board
+green = 11 #Pin Number RPi Board
+red = 18 #Pin Number RPi Board
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(green, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
