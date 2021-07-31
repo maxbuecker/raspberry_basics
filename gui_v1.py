@@ -7,33 +7,39 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
 #define GUI
-class PushButton(QWidget):
+class GUI(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 Push button - pyblog.in'
+        self.title = 'WEATHER CHANNEL'
         self.width = 400
         self.height = 300
-        self.left = 10
-        self.top = 10
+        self.left = 100
+        self.top = 100
         self.initUI()
     
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
         
-        button = QPushButton('PyQt5 button', self)
-        button.setToolTip('This is an example pyqt5 push button')
-        button.move(150,100)
-        button.clicked.connect(self.on_click)
+        start-button = QPushButton('Start Recording', self)
+        start-button.setToolTip('Start Button')
+        start-button.move(150,100)
+        start-button.clicked.connect(self.on_click)
+        
+        stop-button = QPushButton('Stop Recording', self)
+        stop-button.setToolTip('Stop Button')
+        stop-button.move(150,200)
+        stop-button.clicked.connect(self.on_click)
         
         self.show()
 
     @pyqtSlot()
     def on_click(self):
-        print('PyQt5 pushbutton is clicked')
+        print('Recording started')
+        START = True
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    button = PushButton()
+    gui = GUI()
     sys.exit(app.exec_())
